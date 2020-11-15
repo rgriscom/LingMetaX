@@ -1,37 +1,14 @@
 """
 #IMDI Maker (ELAR)
 **Author:** Richard Griscom
-**Last updated:** 2020-10-08
-**Description:** This script takes three TSV files as input: 1) session metadata, 2) project metadata, and 3) speaker metadata. The script lets the user specify the column name that corresponds to each of the required fields from ELDP in a form. The script then compiles the information from the two spreadsheets and produces IMDI files according to the standards requested by the Endangered Languages Archive (ELAR) for each bundle. 
+**Last updated:** 2020-11-15
+**Description:** This script takes three CSV files as input: 1) session metadata, 2) project metadata, and 3) speaker metadata. The script lets the user specify the column name that corresponds to each of the required fields in a form. The script then compiles the information from the two spreadsheets and produces IMDI files according to the standards requested by the Endangered Languages Archive (ELAR) for each bundle. 
 
 **Resources:** Please find template spreadsheets here:
-1) Project Metadata Template (.ODS/.XLS)
-2) Session Metadata Template (.ODS/.XLS) / Session Metadata Kobotoolbox form
-3) Speaker Metadata Template (.ODS/.XLS) / Speaker Metadata Kobotoolbox form
-
-
-
-outline of script:
-(assume all files either in the same folder or sub-folders for the time being, later add a GUI and config file)
-1. opon the project, session, and speaker metadata files, load each into a DataFrame
-2. make a third DataFrame which will have combined information (combined_df)
-3. for each session in the session_df, pull out the corresponding information from the speaker_df
-    3.b in a "IMDI_Maker_Output" folder, write an IMDI file for the session
-
-*add section that 
-
-   
+1) Project Metadata Template (.CSV)
+2) Session Metadata Template (.CSV)
+3) Speaker Metadata Template (.CSV)    
 """
-#Populate combined_df (this is currently specific to the Hadza data and involves some data creation, but later should be generalized such that it will only combine pre-formatted data into the combined_df)
-
-
-#For TODAY: 
-# X1. Run it
-# #2. Debug
-# 2.5 Add output CVS with each session name and the problem each one has (start with missing speakers)
-# 3. Check output, fix errors
-# 4. Add ability to detect written resources with version control _YYYYMMDD at the end of the filename
-
 
 import os, datetime
 import pandas as pd
