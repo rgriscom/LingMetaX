@@ -10,6 +10,11 @@
 3) Speaker Metadata Template (.CSV)    
 """
 
+### Add version control extension for text files (including EAFs from LRs)
+### Run the script
+### Check the output
+### Send them to Stephanie
+
 import os, datetime
 import pandas as pd
 from datetime import date
@@ -31,27 +36,39 @@ speaker_df = speaker_df.replace(to_replace="nan",value="")
 for index, row in combined_df.iterrows():
     #Merge project info
     for p_index, p_row in project_df.iterrows():
-        if row['project_name'] == p_row['name']:
+        if row['project_ID'] == p_row['ID']:
             combined_df.at[index, 'project_title'] = p_row['title']            
             combined_df.at[index, 'project_ID'] = p_row['ID']
+            combined_df.at[index, 'project_year'] = p_row['year']
             combined_df.at[index, 'project_description'] = p_row['description']
-            combined_df.at[index, 'project_contact1_name'] = p_row['contact1_name']
+            combined_df.at[index, 'project_contact1_name1'] = p_row['contact1_name1']
+            combined_df.at[index, 'project_contact1_name2'] = p_row['contact1_name2']
             combined_df.at[index, 'project_contact1_address'] = p_row['contact1_address']
             combined_df.at[index, 'project_contact1_email'] = p_row['contact1_email']
             combined_df.at[index, 'project_contact1_organisation'] = p_row['contact1_organisation']
-            combined_df.at[index, 'project_contact2_name'] = p_row['contact2_name']
+            combined_df.at[index, 'project_contact2_name1'] = p_row['contact2_name1']
+            combined_df.at[index, 'project_contact2_name2'] = p_row['contact2_name2']
             combined_df.at[index, 'project_contact2_address'] = p_row['contact2_address']
             combined_df.at[index, 'project_contact2_email'] = p_row['contact2_email']
             combined_df.at[index, 'project_contact2_organisation'] = p_row['contact2_organisation']
-            combined_df.at[index, 'project_contact3_name'] = p_row['contact3_name']
+            combined_df.at[index, 'project_contact3_name1'] = p_row['contact3_name1']
+            combined_df.at[index, 'project_contact3_name2'] = p_row['contact3_name2']
             combined_df.at[index, 'project_contact3_address'] = p_row['contact3_address']
             combined_df.at[index, 'project_contact3_email'] = p_row['contact3_email']
             combined_df.at[index, 'project_contact3_organisation'] = p_row['contact3_organisation']
-            combined_df.at[index, 'project_contact4_name'] = p_row['contact4_name']
+            combined_df.at[index, 'project_contact4_name1'] = p_row['contact4_name1']
+            combined_df.at[index, 'project_contact4_name2'] = p_row['contact4_name2']
             combined_df.at[index, 'project_contact4_address'] = p_row['contact4_address']
             combined_df.at[index, 'project_contact4_email'] = p_row['contact4_email']
             combined_df.at[index, 'project_contact4_organisation'] = p_row['contact4_organisation']
-    
+            if p_row['contact4_name1'] != "":
+                combined_df.at[index, 'project_contact_total'] = 4
+            elif p_row['contact3_name1'] != "":
+                combined_df.at[index, 'project_contact_total'] = 3
+            elif p_row['contact2_name1'] != "":
+                    combined_df.at[index, 'project_contact_total'] = 2
+            else:
+                combined_df.at[index, 'project_contact_total'] = 1
     #Merge speaker data
     actor_num = 1
     combined_df.at[index, 'total_actor_num'] = 0
@@ -114,7 +131,7 @@ for index, row in combined_df.iterrows():
             if name.split(".")[0] == row['name'] or written_resource_name_check == True:
                 
                 #Media resource files
-                if name.endswith((".wav", ".WAV", ".mp4", ".MP4")):
+                if name.endswith((".wav", ".WAV", ".mp4", ".MP4",".jpg",".JPG")):
                     media_file_num+=1
                     combined_df.at[index, 'total_media_file_num'] += 1
                     combined_df.at[index, 'media_file' + str(media_file_num) + '_location'] = root.split(current_dir)[1].split("/")[1] + os.sep + name
@@ -125,7 +142,7 @@ for index, row in combined_df.iterrows():
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_date'] = str(today)
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_owner'] = ""
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_publisher'] = ""
-                    combined_df.at[index,  'media_file' + str(media_file_num) + '_access_contact_name'] = combined_df.at[index,  'project_contact1_name']
+                    combined_df.at[index,  'media_file' + str(media_file_num) + '_access_contact_name'] = combined_df.at[index,  'project_contact1_name1'] + " " + combined_df.at[index,  'project_contact1_name2']
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_contact_address'] = combined_df.at[index,  'project_contact1_address']
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_contact_email'] = combined_df.at[index,  'project_contact1_email']
                     combined_df.at[index,  'media_file' + str(media_file_num) + '_access_contact_organisation'] = combined_df.at[index,  'project_contact1_organisation']
@@ -140,6 +157,10 @@ for index, row in combined_df.iterrows():
                         combined_df.at[index, 'media_file' + str(media_file_num) + '_type'] = 'Video'
                         combined_df.at[index, 'media_file' + str(media_file_num) + '_format'] = 'video/mp4'
 
+                    if name.endswith((".jpg", ".JPG")):
+                        combined_df.at[index, 'media_file' + str(media_file_num) + '_type'] = 'Image'
+                        combined_df.at[index, 'media_file' + str(media_file_num) + '_format'] = 'image/jpeg'
+
                 #Written resource file    
                 if name.endswith((".txt", ".TXT", ".csv", ".CSV", ".TextGrid", ".eaf", ".EAF", ".flextext", ".PDF", ".pdf")):
                     written_file_num+=1
@@ -153,7 +174,7 @@ for index, row in combined_df.iterrows():
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_date'] = str(today)
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_owner'] = ""
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_publisher'] = ""
-                    combined_df.at[index, 'written_file' + str(written_file_num) + '_access_contact_name'] = combined_df.at[index, 'project_contact1_name']
+                    combined_df.at[index, 'written_file' + str(written_file_num) + '_access_contact_name'] = combined_df.at[index, 'project_contact1_name1'] + " " + combined_df.at[index, 'project_contact1_name2']
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_contact_address'] = combined_df.at[index, 'project_contact1_address']
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_contact_email'] = combined_df.at[index, 'project_contact1_email']
                     combined_df.at[index, 'written_file' + str(written_file_num) + '_access_contact_organisation'] = combined_df.at[index, 'project_contact1_organisation']
@@ -217,7 +238,7 @@ for index, row in combined_df.iterrows():
         output_data_file.write("\n")
         print("\n")
 
-
+#Create the IMDI file
 for index, row in combined_df.iterrows():
     with open(current_dir + os.sep + row['name'] + '.imdi', 'w') as combined_file:
 
@@ -229,7 +250,30 @@ for index, row in combined_df.iterrows():
         combined_file.write('    <Name>' + row['name'] + '</Name>\n')
         combined_file.write('    <Title>' + row['title'] + '</Title>\n')
         combined_file.write('    <Date>' + row['date'] + '</Date>\n')
-        combined_file.write('    <Description LanguageId="" Link="">' + row['description'] + '</Description>\n')
+        combined_file.write('    <Description LanguageId="" Link="">' + row['description'] + ' For any use of this single bundle of materials, please use the following citation: ')
+        #Add the names of all participants to the citation in the description
+        actor_num = 1
+        while actor_num <= int(row['total_actor_num']):
+            if row['actor' + str(actor_num) + '_name1'] != "":
+                if actor_num == int(row['total_actor_num']):
+                    if int(row['total_actor_num']) > 1:
+                        combined_file.write(' and ')
+                    combined_file.write(row['actor' + str(actor_num) + '_name1'] + ' ' + row['actor' + str(actor_num) + '_name2'] + ". " + row['date'].split('-')[0] + ". " + " \"" + row['title'] + "\"" + " [" + row['name'] + "] in ")
+                else:
+                    combined_file.write(row['actor' + str(actor_num) + '_name2'] + ', ' + row['actor' + str(actor_num) + '_name1'])
+            actor_num+=1
+        contact_num = 1
+        while contact_num <= int(row['project_contact_total']):
+            if row['project_contact' + str(contact_num) + '_name1'] != "":
+                if contact_num == int(row['project_contact_total']):
+                    if int(row['project_contact_total']) > 1 :
+                        combined_file.write(' and ')
+                    combined_file.write(row['project_contact' + str(contact_num) + '_name1'] + ' ' + row['project_contact' + str(contact_num) + '_name2'] + ". " + str(row['project_year']) + ". " + row['project_title'] + ". London: SOAS, Endangered Languages Archive. Accessed on [insert date here]. </Description>\n")            
+                else:
+                    combined_file.write(row['project_contact' + str(contact_num) + '_name2'] + ', ' + row['project_contact' + str(contact_num) + '_name1'])
+            contact_num+=1          
+        
+        #
         combined_file.write('    <MDGroup>\n')
         combined_file.write('      <Location>\n')
         combined_file.write('        <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml" Type="ClosedVocabulary">' + row['location_continent'] + '</Continent>\n')
@@ -243,28 +287,28 @@ for index, row in combined_df.iterrows():
         combined_file.write('        <Title>' + row['project_title'] + '</Title>\n')
         combined_file.write('        <Id>' + row['project_ID'] + '</Id>\n')
         combined_file.write('        <Contact>\n')    
-        combined_file.write('          <Name>' + row['project_contact1_name'] + '</Name>\n')
+        combined_file.write('          <Name>' + row['project_contact1_name1'] + " " + row['project_contact1_name2'] + '</Name>\n')
         combined_file.write('          <Address>' + row['project_contact1_address'] + '</Address>\n')
         combined_file.write('          <Email>' + row['project_contact1_email'] +  '</Email>\n')
         combined_file.write('          <Organisation>' + row['project_contact1_organisation'] + '</Organisation>\n')
         combined_file.write('        </Contact>\n')
-        if row['project_contact2_name'] != "":
+        if row['project_contact2_name1'] != "":
             combined_file.write('        <Contact>\n')    
-            combined_file.write('          <Name>' + row['project_contact2_name'] + '</Name>\n')
+            combined_file.write('          <Name>' + row['project_contact2_name1'] + " " + row['project_contact2_name2'] + '</Name>\n')
             combined_file.write('          <Address>' + row['project_contact2_address'] + '</Address>\n')
             combined_file.write('          <Email>' + row['project_contact2_email'] +  '</Email>\n')
             combined_file.write('          <Organisation>' + row['project_contact2_organisation'] + '</Organisation>\n')
             combined_file.write('        </Contact>\n')
-        if row['project_contact3_name'] != "":
+        if row['project_contact3_name1'] != "":
             combined_file.write('        <Contact>\n')    
-            combined_file.write('          <Name>' + row['project_contact3_name'] + '</Name>\n')
+            combined_file.write('          <Name>' + row['project_contact3_name1'] + " " + row['project_contact3_name2'] + '</Name>\n')
             combined_file.write('          <Address>' + row['project_contact3_address'] + '</Address>\n')
             combined_file.write('          <Email>' + row['project_contact3_email'] +  '</Email>\n')
             combined_file.write('          <Organisation>' + row['project_contact3_organisation'] + '</Organisation>\n')
             combined_file.write('        </Contact>\n')
-        if row['project_contact4_name'] != "":
+        if row['project_contact4_name1'] != "":
             combined_file.write('        <Contact>\n')    
-            combined_file.write('          <Name>' + row['project_contact4_name'] + '</Name>\n')
+            combined_file.write('          <Name>' + row['project_contact4_name1'] + " " + row['project_contact4_name2'] + '</Name>\n')
             combined_file.write('          <Address>' + row['project_contact4_address'] + '</Address>\n')
             combined_file.write('          <Email>' + row['project_contact4_email'] +  '</Email>\n')
             combined_file.write('          <Organisation>' + row['project_contact4_organisation'] + '</Organisation>\n')
