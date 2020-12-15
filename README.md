@@ -7,12 +7,15 @@
 Griscom, Richard T. 2020. *IMDI Maker*. DOI: 10.5281/zenodo.4308936 
 
 **Dependencies**
+
 [pandas](https://pandas.pydata.org/)
 
 **Data Preparation**
+
 Metadata must be formatted according to the provided templates, and divided according to project, recording/session, and particpant/speaker metadata. This allows the script to identify values within each table and combine them together to produce the XML output. Filenames for resource files should be identical to the corresponding value of the *name* column in the recording metadata.
 
 **Using the script**
+
 Download the script and place it in the same folder as the metadata files. [Python](https://www.python.org/) and [pandas](https://pandas.pydata.org/) must be installed in order to successfully run the script. 
 
 
