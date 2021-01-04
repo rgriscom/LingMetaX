@@ -1,7 +1,7 @@
 # LingMetaX
 **Author:** Richard Griscom
 
-**Description**: This script converts linguistic metadata from a .csv format produced by [KoBoToolbox](https://www.kobotoolbox.org/) to the XML format used by [the Lameta linguistic metadata editor](https://sites.google.com/site/metadatatooldiscussion/). This is useful for linguists who are using the [ODK Metadata Method](https://zenodo.org/record/3871516) to create linguistic metadata during fieldwork. 
+**Description**: This script converts linguistic metadata from a .csv format produced by [KoBoToolbox](https://www.kobotoolbox.org/) to the XML format used by the [Lameta](https://sites.google.com/site/metadatatooldiscussion/) linguistic metadata editor. This is useful for linguists who are using the [ODK Metadata Method](https://zenodo.org/record/3871516) to create linguistic metadata during fieldwork. 
 
 The script is available in two versions: 
 * [Google Colab Notebook](https://colab.research.google.com/drive/149OpY8zxxSHA1u2deInzkegnUsEj1jiI?usp=sharing) - This interactive online version can be run without any installation or setup. 
