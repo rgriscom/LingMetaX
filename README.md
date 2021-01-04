@@ -23,9 +23,9 @@ Metadata must be formatted according to the provided templates provided in this 
 
 **Using the downloadable script:**
 The downloadable Python script version also has the capability of automatically organizing resource files together with metadata. For this feature to work correctly, the following must hold true:
-    1. Filenames for all resource files should be identical to the corresponding session ID in the session metadata
-    2. Resource files for consent should consist of the participant’s full name followed by “_Consent” (e.g. Mariamu Anyawire_Consent.wav)
-    3. Photos of participants should consist of the participant’s full name followed by “_Photo” (e.g. Mariamu Anyawire_Photo.jpg).
+1. Filenames for all resource files should be identical to the corresponding session ID in the session metadata
+2. Resource files for consent should consist of the participant’s full name followed by “_Consent” (e.g. Mariamu Anyawire_Consent.wav)
+3. Photos of participants should consist of the participant’s full name followed by “_Photo” (e.g. Mariamu Anyawire_Photo.jpg).
     
 Download the script and place it in the same folder as the metadata files, and either in the same folder as the resource files or in the parent folder of the folders which contain the resource files. [Python](https://www.python.org/) and [pandas](https://pandas.pydata.org/) must be installed in order to successfully run the script. 
 
