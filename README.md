@@ -1,10 +1,14 @@
 # LingMetaX
 **Author:** Richard Griscom
 
-**Description**: This script takes three CSV files as input: 1) session metadata, 2) project metadata, and 3) speaker metadata. The script lets the user specify the column name that corresponds to each of the required fields in a form. The script then compiles the information from the two spreadsheets and produces IMDI files according to the standards requested by the Endangered Languages Archive (ELAR) for each bundle. This is useful for linguists who are using the [ODK Metadata Method](https://zenodo.org/record/3871516) to create linguistic metadata during fieldwork. 
+**Description**: This script converts linguistic metadata from a .csv format produced by [KoBoToolbox](https://www.kobotoolbox.org/) to the XML format used by [the Lameta linguistic metadata editor](https://sites.google.com/site/metadatatooldiscussion/). This is useful for linguists who are using the [ODK Metadata Method](https://zenodo.org/record/3871516) to create linguistic metadata during fieldwork. 
+
+The script is available in two versions: 
+* Google Colab Notebook - 
+* Python Script - This version must be downloaded and run on your own computer. You must have Python and the pandas library installed. 
 
 **Citation:**
-Griscom, Richard T. 2020. *IMDI Maker*. DOI: 10.5281/zenodo.4308936 
+Griscom, Richard T. 2020. *LingMetaX*. https://github.com/rgriscom/LingMetaX/
 
 **Dependencies:** 
 [pandas](https://pandas.pydata.org/)
