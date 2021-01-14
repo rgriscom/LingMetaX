@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project>
+	<Iso639Code />
+	<transcriptionFont />
+	<freeTranslationFont />
+	<AutoSegmentersettings minSegmentLength="0" maxSegmentLength="0" preferrerdPauseLength="0" optimumLengthClampingFactor="0" />
+	<Title></Title>
+	<FundingProjectTitle></FundingProjectTitle>
+	<ProjectDescription></ProjectDescription>
+	<VernacularISO3CodeAndName></VernacularISO3CodeAndName>
+	<Location />
+	<Region></Region>
+	<Country></Country>
+	<Continent></Continent>
+	<ContactPerson />
+	<AccessProtocol>custom</AccessProtocol>
+	<ContentType />
+	<Applications />
+	<RightsHolder />
+	<Depositor />
+	<RelatedPublications />
+	<customAccessChoices>show,hide</customAccessChoices>
+</Project>
