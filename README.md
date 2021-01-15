@@ -5,7 +5,7 @@
 
 The script is available in two versions: 
 * [Google Colab Notebook](https://colab.research.google.com/drive/149OpY8zxxSHA1u2deInzkegnUsEj1jiI?usp=sharing) - This interactive online version can be run without any installation or setup. 
-* Python Script - This version must be downloaded and run on your own computer. You must have Python and the pandas library installed. 
+* [Python Script](https://github.com/rgriscom/LingMetaX/blob/main/LingMetaX.py) - This version must be downloaded and run on your own computer. You must have Python and the pandas library installed. 
 
 **Citation:**
 Griscom, Richard T. 2020. *LingMetaX*. https://github.com/rgriscom/LingMetaX/
