@@ -16,10 +16,10 @@ Griscom, Richard T. 2020. *LingMetaX*. https://github.com/rgriscom/LingMetaX/
 **Data Preparation:** 
 The script accepts two .csv files as input:
 
-* [Participants.csv](https://github.com/rgriscom/LingMetaX/blob/main/Participants.csv) - Contains metadata about the participants who have contributed to the creation of linguistic data.
-* [Sessions.csv](https://github.com/rgriscom/LingMetaX/blob/main/Sessions.csv) - Contains metadata about recording sessions involving participants. 
+* [Participants.csv](https://github.com/rgriscom/LingMetaX/blob/main/Templates/Participants.csv) - Contains metadata about the participants who have contributed to the creation of linguistic data.
+* [Sessions.csv](https://github.com/rgriscom/LingMetaX/blob/main/Templates/Sessions.csv) - Contains metadata about recording sessions involving participants. 
 
-Metadata must be formatted according to the provided templates provided in this project. See the [CSV Template Descriptions](https://github.com/rgriscom/LingMetaX/blob/main/CSV%20Template%20Descriptions.md) for more information. If you have used one of the XLS form templates from the [ODK Metadata Method](https://zenodo.org/record/3871516) and exported data from KoBoToolbox, then the data will already be in the correct format. 
+Metadata must be formatted according to the provided templates provided in this project. See the [CSV Template Descriptions](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/CSV%20Template%20Descriptions.md) for more information. If you have used one of the XLS form templates from the [ODK Metadata Method](https://zenodo.org/record/3871516) and exported data from KoBoToolbox, then the data will already be in the correct format. 
 
 **Using the downloadable script:**
 The downloadable Python script version also has the capability of automatically organizing resource files together with metadata. For this feature to work correctly, the following must hold true:
