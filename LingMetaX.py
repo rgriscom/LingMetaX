@@ -108,19 +108,6 @@ for index, row in combined_df.iterrows():
 
             #IF the first and second name match
             if row['speaker_' + str(actor_num) + '_full_name'] == s_row['full_name'] and actor_check == 0:
-                """combined_df.at[index, 'actor' + str(actor_num) + '_nickname'] = s_row['nickname']
-                combined_df.at[index, 'actor' + str(actor_num) + '_code'] = s_row['code']
-                combined_df.at[index, 'actor' + str(actor_num) + '_primary_occupation'] = s_row['primary_occupation']
-                if s_row['Ethnic Group'] != "other":
-                  combined_df.at[index, 'actor' + str(actor_num) + '_ethnicity'] = s_row['ethnic_group']
-                else:
-                  combined_df.at[index, 'actor' + str(actor_num) + '_ethnicity'] = s_row['ethnic_group_other']
-                combined_df.at[index, 'actor' + str(actor_num) + '_DOB'] = s_row['birth_year']
-                combined_df.at[index, 'actor' + str(actor_num) + '_sex'] = s_row['gender']
-                combined_df.at[index, 'actor' + str(actor_num) + '_education'] = s_row['education']
-                combined_df.at[index, 'actor' + str(actor_num) + '_description'] = s_row['description']
-                combined_df.at[index, 'total_actor_num'] += 1
-                """
                 if actor_num == 1:
                   all_actor_names_list = []
                   all_actor_names_list.append(row['speaker_' + str(actor_num) + '_full_name'])
@@ -236,11 +223,11 @@ for index, row in combined_df.iterrows():
       session_file.write('\t</contributions>\n')
       session_file.write('\t<AdditionalFields type="xml">\n')
       session_file.write('\t\t<Involvement type="string">' + row['interactivity'] + '</Involvement>\n')
-      session_file.write('\t\t<Location_Region type="string">' + row['region'] + '</Location_Region>\n')
-      session_file.write('\t\t<Location_Country type="string">' + row['Location_Country'] + '</Location_Country>\n')
-      session_file.write('\t\t<Location_Continent type="string">' + row['Location_Continent'] + '</Location_Continent>\n')
-      session_file.write('\t\t<Planning_Type type="string">' + row['Planning_Type'] + '</Planning_Type>\n')
+      session_file.write('\t\t<Location_Region type="string">' + row['location_region'] + '</Location_Region>\n')
+      session_file.write('\t\t<Location_Country type="string">' + row['location_country'] + '</Location_Country>\n')
+      session_file.write('\t\t<Location_Continent type="string">' + row['location_continent'] + '</Location_Continent>\n')
+      session_file.write('\t\t<Planning_Type type="string">' + row['planning'] + '</Planning_Type>\n')
       if row['Social_Context'] != "":
-        session_file.write('\t\t<Social_Context type="string">' + row['Social_Context'] + '</Social_Context>\n')
+        session_file.write('\t\t<Social_Context type="string">' + row['social_context'] + '</Social_Context>\n')
       session_file.write('\t</AdditionalFields>\n')
       session_file.write('</Session>\n')
