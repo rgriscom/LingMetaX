@@ -1,4 +1,4 @@
-** CSV Template Descriptions
+# CSV Template Descriptions
 
 This document describes the requirements for the .csv files used as input for LingMetaX. Two template files are provided in the GitHub project. These templates are based on the data entry forms used in the ODK Linguistic Metadata Method.
 
