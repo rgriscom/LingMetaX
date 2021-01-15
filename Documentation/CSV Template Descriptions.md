@@ -54,7 +54,7 @@ The two input files should have the filenames 'Participants.csv' and 'Sessions.c
 
 **archive_repository** The archive or repository where the recording will be deposited (AILCA, AILLA, ANLA, ELAR, PARADISEC, REAP, TLA, Custom)
 
-**genre** The speech genre of the recording session (See [the list of speech genres](https://github.com/rgriscom/LingMetaX/blob/main/Speech%20Genres.md))
+**genre** The speech genre of the recording session (See [the list of speech genres](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Speech%20Genres.md))
 
 **subgenre** The subgenre of the recording session
 
@@ -102,20 +102,20 @@ The two input files should have the filenames 'Participants.csv' and 'Sessions.c
 
 **participant_1_full_name** The full name of the first participant, exactly as it is written in the Participants.csv file
 
-**participant_1_role** The role of the first participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Participant%20Roles.md))
+**participant_1_role** The role of the first participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Participant%20Roles.md))
 
 **participant_2_full_name** The full name of the second participant, exactly as it is written in the Participants.csv file
 
-**participant_2_role** The role of the second participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Participant%20Roles.md))
+**participant_2_role** The role of the second participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Participant%20Roles.md))
 
 **participant_3_full_name** The full name of the third participant, exactly as it is written in the Participants.csv file
 
-**participant_3_role** The role of the third participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Participant%20Roles.md))
+**participant_3_role** The role of the third participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Participant%20Roles.md))
 
 **participant_4_full_name** The full name of the fourth participant, exactly as it is written in the Participants.csv file
 
-**participant_4_role** The role of the fourth participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Participant%20Roles.md))
+**participant_4_role** The role of the fourth participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Participant%20Roles.md))
 
 **participant_5_full_name** The full name of the fifth participant, exactly as it is written in the Participants.csv file
 
-**participant_5_role** The role of the fifth participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Participant%20Roles.md))
+**participant_5_role** The role of the fifth participant (see [list of participant roles](https://github.com/rgriscom/LingMetaX/blob/main/Documentation/Participant%20Roles.md))
