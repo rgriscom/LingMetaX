@@ -3,7 +3,7 @@
 This document describes the requirements for the .csv files used as input for LingMetaX. Two template files are provided in the GitHub project. These templates are based on the data entry forms used in the ODK Linguistic Metadata Method.
 
 ## General Requirements
-The two input files should have the filenames 'Participants.csv' and 'Sessions.csv'. The default delimiter setting for LingMetaX is a semicolon, but this can be modified using the form of the LingMetaX Google Colab Notebook or directly in the code of the Python script. The column names included in the template files constitute the only required column names. Additional columns may be present in the .csv files and will not impact the output of LingMetaX.
+The two input files should have the filenames containing the word "Participant" or "Session". The default delimiter setting for LingMetaX is a semicolon, but this can be modified using the form of the LingMetaX Google Colab Notebook or directly in the code of the Python script. The column names included in the template files constitute the only required column names. Additional columns may be present in the .csv files and will not impact the output of LingMetaX.
 
 ## Participants.csv
 **full_name** The full name of the participant, with spaces in between each name.
