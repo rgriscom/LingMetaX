@@ -5,7 +5,7 @@ This document describes the requirements for the .csv files used as input for Li
 ## General Requirements
 The two input files should have the filenames containing the word "Participant" or "Session". The default delimiter setting for LingMetaX is a semicolon, but this can be modified using the form of the LingMetaX Google Colab Notebook or directly in the code of the Python script. The column names included in the template files constitute the only required column names. Additional columns may be present in the .csv files and will not impact the output of LingMetaX.
 
-## Participants.csv
+## Participant CSV
 **full_name** The full name of the participant, with spaces in between each name.
 
 **nickname** A nickname for the participant 
@@ -35,7 +35,7 @@ The two input files should have the filenames containing the word "Participant" 
 **father_language** The ISO 639-3 code of the participant's mother's primary language
 
 
-## Sessions.csv
+## Session CSV
 **date** The date of the recording session (YYYY-MM-DD)
 
 **title** The title of the recording session (e.g. "Gudo's story about hunting a lion in the bush")
